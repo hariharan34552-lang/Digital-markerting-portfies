@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>M. Hariharan | Digital Marketing Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#0f172a;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:white;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      background:rgba(15,23,42,0.9);
+      backdrop-filter:blur(10px);
+      padding:18px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    nav h2{
+      font-size:28px;
+      font-weight:700;
+      color:#38bdf8;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:30px;
+    }
+
+    nav ul li a{
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    nav ul li a:hover{
+      color:#38bdf8;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:120px 8%;
+      gap:50px;
+      flex-wrap:wrap;
+    }
+
+    .hero-text{
+      flex:1;
+    }
+
+    .hero-text h3{
+      color:#38bdf8;
+      font-size:22px;
+      margin-bottom:10px;
+    }
+
+    .hero-text h1{
+      font-size:60px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-text p{
+      color:#cbd5e1;
+      line-height:1.8;
+      margin-bottom:30px;
+      max-width:650px;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border:none;
+      background:#38bdf8;
+      color:#0f172a;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+      display:inline-block;
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      background:white;
+    }
+
+    .hero-img{
+      flex:1;
+      display:flex;
+      justify-content:center;
+    }
+
+    .circle{
+      width:350px;
+      height:350px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#38bdf8,#2563eb);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 0 40px rgba(56,189,248,0.5);
+    }
+
+    .circle h2{
+      font-size:40px;
+      text-align:center;
+      line-height:1.4;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:90px 8%;
+    }
+
+    .title{
+      font-size:40px;
+      margin-bottom:50px;
+      text-align:center;
+      color:#38bdf8;
+    }
+
+    /* ABOUT */
+
+    .about{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:40px;
+      align-items:center;
+    }
+
+    .about-card{
+      background:#1e293b;
+      padding:35px;
+      border-radius:20px;
+      transition:0.4s;
+    }
+
+    .about-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .about-card p{
+      color:#cbd5e1;
+      line-height:1.8;
+    }
+
+    /* SKILLS */
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+
+    .skill{
+      background:#1e293b;
+      padding:25px;
+      border-radius:16px;
+      transition:0.3s;
+      border:1px solid transparent;
+    }
+
+    .skill:hover{
+      border-color:#38bdf8;
+      transform:translateY(-6px);
+    }
+
+    .skill h3{
+      margin-bottom:12px;
+      color:#38bdf8;
+    }
+
+    .skill p{
+      color:#cbd5e1;
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    /* EXPERIENCE */
+
+    .timeline{
+      position:relative;
+      max-width:900px;
+      margin:auto;
+    }
+
+    .timeline::after{
+      content:'';
+      position:absolute;
+      width:4px;
+      background:#38bdf8;
+      top:0;
+      bottom:0;
+      left:50%;
+      margin-left:-2px;
+    }
+
+    .container{
+      padding:20px 40px;
+      position:relative;
+      width:50%;
+    }
+
+    .container.left{
+      left:0;
+    }
+
+    .container.right{
+      left:50%;
+    }
+
+    .content{
+      background:#1e293b;
+      padding:25px;
+      border-radius:15px;
+    }
+
+    .content h3{
+      color:#38bdf8;
+      margin-bottom:10px;
+    }
+
+    .content p{
+      color:#cbd5e1;
+      line-height:1.7;
+      font-size:14px;
+    }
+
+    /* PROJECTS */
+
+    .project-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .project-card{
+      background:#1e293b;
+      padding:30px;
+      border-radius:20px;
+      transition:0.4s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .project-card h3{
+      color:#38bdf8;
+      margin-bottom:15px;
+    }
+
+    .project-card p{
+      color:#cbd5e1;
+      line-height:1.8;
+      font-size:14px;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      color:#cbd5e1;
+      margin:12px 0;
+    }
+
+    .socials{
+      margin-top:30px;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .socials a{
+      background:#38bdf8;
+      color:#0f172a;
+      padding:12px 22px;
+      border-radius:12px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .socials a:hover{
+      background:white;
+      transform:translateY(-5px);
+    }
+
+    footer{
+      padding:25px;
+      text-align:center;
+      background:#020617;
+      color:#94a3b8;
+      margin-top:60px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      .hero-text h1{
+        font-size:42px;
+      }
+
+      .timeline::after{
+        left:20px;
+      }
+
+      .container{
+        width:100%;
+        padding-left:70px;
+        padding-right:20px;
+      }
+
+      .container.right{
+        left:0%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <h2>Hariharan</h2>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-text">
+      <h3>Digital Marketing & Business Operations Executive</h3>
+
+      <h1>
+        Hi, I'm <span style="color:#38bdf8;">M. Hariharan</span>
+      </h1>
+
+      <p>
+        Results-driven BCA graduate specializing in Performance Marketing,
+        Meta Ads, SEO, Lead Generation, Campaign Optimization,
+        Marketing Analytics, and Business Growth Strategies.
+      </p>
+
+      <a href="#contact" class="btn">Hire Me</a>
+    </div>
+
+    <div class="hero-img">
+      <div class="circle">
+        <h2>Digital<br>Marketing<br>Expert</h2>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2 class="title">About Me</h2>
+
+    <div class="about">
+
+      <div class="about-card">
+        <p>
+          I am passionate about growth marketing, campaign analytics,
+          customer acquisition, and business operations. I enjoy building
+          high-performing marketing strategies using data-driven insights,
+          automation, and audience targeting.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <p>
+          My expertise includes Meta Ads Management, SEO Optimization,
+          Lead Generation, Reporting Dashboards, Competitor Analysis,
+          Funnel Optimization, and Marketing Performance Tracking.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <h2 class="title">Core Skills</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill">
+        <h3>Performance Marketing</h3>
+        <p>Meta Ads, ROI optimization, campaign scaling and audience targeting.</p>
+      </div>
+
+      <div class="skill">
+        <h3>SEO & Analytics</h3>
+        <p>Keyword research, SEO optimization, Google Analytics and reporting.</p>
+      </div>
+
+      <div class="skill">
+        <h3>Lead Generation</h3>
+        <p>Customer acquisition strategies and conversion funnel optimization.</p>
+      </div>
+
+      <div class="skill">
+        <h3>Business Operations</h3>
+        <p>Data analysis, KPI tracking, dashboard reporting and insights.</p>
+      </div>
+
+      <div class="skill">
+        <h3>Web Development</h3>
+        <p>HTML, CSS, JavaScript basics and WordPress website management.</p>
+      </div>
+
+      <div class="skill">
+        <h3>Marketing Automation</h3>
+        <p>Workflow optimization and automation-driven marketing support.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- EXPERIENCE -->
+
+  <section id="experience">
+
+    <h2 class="title">Experience</h2>
+
+    <div class="timeline">
+
+      <div class="container left">
+        <div class="content">
+          <h3>Glomin Solutions</h3>
+          <p>
+            Managed Facebook and Instagram advertising campaigns focused on
+            lead generation and brand awareness. Conducted audience targeting,
+            competitor analysis and campaign optimization strategies.
+          </p>
+        </div>
+      </div>
+
+      <div class="container right">
+        <div class="content">
+          <h3>DM Tech Pro</h3>
+          <p>
+            Worked on SEO optimization, content marketing and website
+            development projects using HTML, CSS and JavaScript.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <h2 class="title">Projects</h2>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+        <h3>Performance Marketing Campaign</h3>
+        <p>
+          Created simulated Meta Ads campaigns for fashion and skincare brands
+          with audience targeting, engagement optimization and KPI analysis.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>SEO Research Project</h3>
+        <p>
+          Conducted keyword research, competitor analysis and SEO optimization
+          strategies to improve search visibility for local businesses.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Business KPI Dashboard</h3>
+        <p>
+          Developed Excel-based dashboard for sales tracking, reporting,
+          analytics and customer engagement analysis.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
+
+    <h2 class="title">Contact Me</h2>
+
+    <p>📍 Thanjavur, Tamil Nadu, India</p>
+    <p>📞 +91 6379752142</p>
+    <p>✉️ hariharan34552@gmail.com</p>
+
+    <div class="socials">
+      <a href="#">LinkedIn</a>
+      <a href="#">Instagram</a>
+      <a href="#">Portfolio</a>
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 M. Hariharan | Digital Marketing Portfolio
+  </footer>
+
+  <script>
+
+    // Navbar background effect
+
+    window.addEventListener("scroll", function () {
+
+      const nav = document.querySelector("nav");
+
+      if(window.scrollY > 50){
+        nav.style.background = "#020617";
+      } else {
+        nav.style.background = "rgba(15,23,42,0.9)";
+      }
+
+    });
+
+    // Fade animation
+
+    const cards = document.querySelectorAll(
+      ".skill, .project-card, .about-card, .content"
+    );
+
+    window.addEventListener("scroll", () => {
+
+      cards.forEach(card => {
+
+        const top = card.getBoundingClientRect().top;
+
+        if(top < window.innerHeight - 100){
+          card.style.opacity = "1";
+          card.style.transform = "translateY(0)";
+        }
+
+      });
+
+    });
+
+    cards.forEach(card => {
+      card.style.opacity = "0";
+      card.style.transform = "translateY(40px)";
+      card.style.transition = "0.6s";
+    });
+
+  </script>
+
+</body>
+</html>
